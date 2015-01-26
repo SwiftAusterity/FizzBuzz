@@ -1,0 +1,17 @@
+The first error: (SSL connection error)
+
+Tech explanation: We have a service, someone is trying to connect to the service but their client does not support any of the encryption/security schema our service has available to it.
+
+Layman explanation: They are trying to connect to our <insert application name here> but their program doesn't support the same security that ours does. (start talking about Remedy below)
+
+Remedy: We need to conduct a tech-to-tech (tech meaning technical person) phone call to discuss what options they have available for connecting to us. Will probably only take ~15 mins at worst. If they don't have a technical person on staff we'll have to get from them what client they're connecting to us with so we can draft a step-by-step document on how to remedy the problem.
+
+Second error: (google store error)
+
+Tech ex: The likely problem here is something was making an ajax call (probably shop.aspx) into the shop page but the variable being passed in was undeclared or null (hence "undefined" in javascript parlance) so the call tried to reach the "undefined" method. There is a problem with the client-side code on whatever page called this. (or the server-side code if it's a value being set in aspx/razor code on the front end from a parameter on the back end)
+
+https://www.googlemerchandisestore.com:443/shop.aspx/undefined?type=promotion&data=undefined 
+
+Layman explanation: Some part of our application is trying to get data to display (probably a promotional ad or something to do with promotions) on a web page but the code or data is bad and we need to fix it.
+
+Remedy: Fix the code generating this bad variable/ajax call.
