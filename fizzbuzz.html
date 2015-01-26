@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>FIZZ BUZZ</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+    <a href="#" id="go">Fizz the Buzz</a>
+    <div id="theFizzBuzz"></div>
+
+    <script language="javascript">
+        function Buzz() {
+            var $display = $('#theFizzBuzz');
+
+            for (iterator = 1; iterator <= 100; iterator++) {
+                var extra = '';
+                var yesFizz = iterator % 3 == 0;
+                var yesBuzz = iterator % 5 == 0;
+
+                if (yesFizz) {
+                    extra = extra + ' Fizz';
+                }
+
+                if (iterator % 5 == 0) {
+                    if (!yesFizz) {
+                        extra = extra + ' ';
+                    }
+
+                    extra = extra + 'Buzz';
+                }
+
+                $display.append('<p>' + iterator + extra + '</p>');
+            }
+        }
+
+		$(document).ready(function () {
+			$('#go').click(function () {
+				var $display = $('#theFizzBuzz');
+				var currentGoText = $('#go').text();
+				var rere = (currentGoText.match(/RE/g) || []).length;
+				
+				$display.empty();
+				Buzz();
+				if(rere < 10) {
+					$('#go').text('RE-' + currentGoText);
+				}
+				else {
+					$('#go').text("Seriously? Haven't you pressed this enough yet?");
+				}
+				return false;
+			});
+		});
+    </script>
+</body>
+
+</html>
